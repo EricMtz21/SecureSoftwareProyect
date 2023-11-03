@@ -76,12 +76,12 @@ input:focus {
   outline: none;
 }
 
-input[type="button"] {
+input[type="submit  "] {
   color: var(--color-2);
   background-color: var(--color-4);
   height: 40px;
 }
-input[type="button"]:active {
+input[type="submit"]:active {
   margin-top: 2px;
   height: 37px;
   transition: all 0.1s;
@@ -95,4 +95,13 @@ input[type="button"]:active {
 
 .li-nodot {
   list-style: none;
+}
+
+form {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }

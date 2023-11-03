@@ -7,63 +7,59 @@
   </head>
   <body>
     <div class="main-div">
-        <div class="log-in">
-            <h1>Inicio de sesión</h1>
-            <input type="text" placeholder="Correo electrónico"/>
-            <input type="password" placeholder="Contraseña"/>
-            <input type="button" value="Iniciar sesión"/>
-        </div>
-        <div class="sign-up">
-            <h1>Registro</h1>
-            <input type="text" placeholder="Correo electrónico"/>
-            <input type="text" placeholder="Nombre de usuario"/>
-            <input type="password" id="password" placeholder="Contraseña"/>
-            <div id="password-error" class="error" style="display: none;">
-                <ul>
-                    <li class="li-nodot">
-                        La contraseña debe contener al menos:
-                    </li>
-                    <li>
-                        Una mayúscula.
-                    </li>
-                    <li>
-                        Una minúscula.
-                    </li>
-                    <li>
-                        Un número.
-                    </li>
-                    <li>
-                        Un carácter especial.
-                    </li>
-                    <li>
-                        Tener al menos 8 caracteres.
-                    </li>
-                </ul>
-            </div>
-            <input type="button" value="Registrarse"/>
-        </div>
+      <div class="log-in">
+        <h1>Inicio de sesión</h1>
+        <input type="text" placeholder="Correo electrónico" />
+        <input type="password" placeholder="Contraseña" />
+        <input type="submit" value="Iniciar sesión" />
+      </div>
+      <div class="sign-up">
+        <form action="guardar_registro.php" method="post">
+          <h1>Registro</h1>
+          <input type="text" name="email" placeholder="Correo electrónico" />
+          <input type="text" name="username" placeholder="Nombre de usuario" />
+          <input
+            type="password"
+            name="password"
+            id="password"
+            placeholder="Contraseña"
+          />
+          <div id="password-error" class="error" style="display: none">
+            <ul>
+              <li class="li-nodot">La contraseña debe contener al menos:</li>
+              <li>Una mayúscula.</li>
+              <li>Una minúscula.</li>
+              <li>Un número.</li>
+              <li>Un carácter especial.</li>
+              <li>Tener al menos 8 caracteres.</li>
+            </ul>
+          </div>
+          <input type="submit" value="Registrarse" />
+        </form>
+      </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var passwordInput = document.getElementById('password');
-            var passwordError = document.getElementById('password-error');
-            
-            passwordInput.addEventListener('focus', function () {
-                passwordError.style.display = 'block'; 
-            });
+      document.addEventListener("DOMContentLoaded", function () {
+        var passwordInput = document.getElementById("password")
+        var passwordError = document.getElementById("password-error")
 
-            passwordInput.addEventListener('blur', function () {
-                var password = passwordInput.value;
-                var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+        passwordInput.addEventListener("focus", function () {
+          passwordError.style.display = "block"
+        })
 
-                if (!passwordPattern.test(password)) {
-                    passwordInput.value = "";
-                } else {
-                    passwordError.style.display = 'none'; 
-                }
-            });
-        });
+        passwordInput.addEventListener("blur", function () {
+          var password = passwordInput.value
+          var passwordPattern =
+            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/
+
+          if (!passwordPattern.test(password)) {
+            passwordInput.value = ""
+          } else {
+            passwordError.style.display = "none"
+          }
+        })
+      })
     </script>
-</body>
+  </body>
 </html>
