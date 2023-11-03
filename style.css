@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit&family=Manrope&family=Roboto&display=swap");
+
+:root {
+  --color-1: #ece3ce;
+  --color-2: #739072;
+  --color-3: #4f6f52;
+  --color-4: #3a4d39;
+}
+
+html {
+  background-color: var(--color-1);
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Roboto", sans-serif;
+  color: var(--color-4);
+}
+
+.main-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60%;
+  height: 60%;
+  background-color: var(--color-4);
+  border-radius: 10px;
+  box-shadow: 11px 10px 22px -1px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 11px 10px 22px -1px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 11px 10px 22px -1px rgba(0, 0, 0, 0.75);
+}
+
+.log-in {
+  background-color: var(--color-2);
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border-right: solid 2px var(--color-4);
+}
+
+.sign-up {
+  background-color: var(--color-2);
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  border-left: solid 2px var(--color-4);
+}
+
+input {
+  background-color: var(--color-1);
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  color: var(--color-4);
+  border-radius: 10px;
+  margin: 5px;
+  border: none;
+  padding: 10px;
+  width: 50%;
+}
+
+input::placeholder {
+  color: #739072;
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type="button"] {
+  color: var(--color-2);
+  background-color: var(--color-4);
+  height: 40px;
+}
+input[type="button"]:active {
+  margin-top: 2px;
+  height: 37px;
+  transition: all 0.1s;
+}
+
+.error {
+  color: var(--color-4);
+  width: 60%;
+  text-align: justify;
+}
+
+.li-nodot {
+  list-style: none;
+}

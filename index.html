@@ -1,0 +1,69 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>SecureSoftware</title>
+  </head>
+  <body>
+    <div class="main-div">
+        <div class="log-in">
+            <h1>Inicio de sesión</h1>
+            <input type="text" placeholder="Correo electrónico"/>
+            <input type="password" placeholder="Contraseña"/>
+            <input type="button" value="Iniciar sesión"/>
+        </div>
+        <div class="sign-up">
+            <h1>Registro</h1>
+            <input type="text" placeholder="Correo electrónico"/>
+            <input type="text" placeholder="Nombre de usuario"/>
+            <input type="password" id="password" placeholder="Contraseña"/>
+            <div id="password-error" class="error" style="display: none;">
+                <ul>
+                    <li class="li-nodot">
+                        La contraseña debe contener al menos:
+                    </li>
+                    <li>
+                        Una mayúscula.
+                    </li>
+                    <li>
+                        Una minúscula.
+                    </li>
+                    <li>
+                        Un número.
+                    </li>
+                    <li>
+                        Un carácter especial.
+                    </li>
+                    <li>
+                        Tener al menos 8 caracteres.
+                    </li>
+                </ul>
+            </div>
+            <input type="button" value="Registrarse"/>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var passwordInput = document.getElementById('password');
+            var passwordError = document.getElementById('password-error');
+            
+            passwordInput.addEventListener('focus', function () {
+                passwordError.style.display = 'block'; 
+            });
+
+            passwordInput.addEventListener('blur', function () {
+                var password = passwordInput.value;
+                var passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
+
+                if (!passwordPattern.test(password)) {
+                    passwordInput.value = "";
+                } else {
+                    passwordError.style.display = 'none'; 
+                }
+            });
+        });
+    </script>
+</body>
+</html>
