@@ -8,10 +8,22 @@
   <body>
     <div class="main-div">
       <div class="log-in">
-        <h1>Inicio de sesión</h1>
-        <input type="text" placeholder="Correo electrónico" />
-        <input type="password" placeholder="Contraseña" />
-        <input type="submit" value="Iniciar sesión" />
+        <form action="verificar_sesion.php" method="POST">
+          <h1>Inicio de sesión</h1>
+          <input
+            type="email"
+            placeholder="Correo electrónico"
+            name="email"
+            required
+          />
+          <input
+            type="password"
+            placeholder="Contraseña"
+            name="password"
+            required
+          />
+          <input type="submit" value="Iniciar sesión" />
+        </form>
       </div>
       <div class="sign-up">
         <form action="guardar_registro.php" method="post">
