@@ -28,13 +28,16 @@
       <div class="sign-up">
         <form action="guardar_registro.php" method="post">
           <h1>Registro</h1>
-          <input type="text" name="email" placeholder="Correo electrónico" />
-          <input type="text" name="username" placeholder="Nombre de usuario" />
+          <input type="text" name="email" placeholder="Correo electrónico" required/>
+          <input type="text" name="username" placeholder="Nombre de usuario" required/>
+          <input type="text" name="firstname" placeholder="Nombre" required/>
+          <input type="text" name="lastname" placeholder="Apellido" required/>
           <input
             type="password"
             name="password"
             id="password"
             placeholder="Contraseña"
+            required
           />
           <div id="password-error" class="error" style="display: none">
             <ul>
