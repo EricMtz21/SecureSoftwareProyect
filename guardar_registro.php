@@ -14,7 +14,6 @@ $email = $_POST['email'];
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-// Verifica que la contraseña cumple con los requisitos
 if (preg_match('/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/', $password)) {
     $hashedPassword = password_hash($password, PASSWORD_BCRYPT);
 
